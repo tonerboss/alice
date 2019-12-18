@@ -12,11 +12,11 @@
         </output>
 
         <context if="empty($UserName)" id="name">
-            <output value="Привет! Меня зовут Алиса! Меня создал Игорь Кленовский, он же TonerBoss. А как тебя зовут?"/>
+            <output value="Приветствую Вас! Меня зовут Алиса! Я работаю в интернет магазине TonerBoss точка ru. А как Вас зовут?"/>
 
             <input pattern="$Text">
                 <var name="UserName" value="cap($Text)" scope="user"/>
-                <output value="Приятно познакомиться, $UserName! Напиши мне что-нибудь."/>
+                <output value="Приятно познакомиться, $UserName! Какие вопросы Вас интересуют? Постараюсь помочь."/>
                 <context/>
             </input>
         </context>
@@ -25,7 +25,7 @@
     <input pattern="* пока *">
         <var name="end_session" value="javascript: true"/>
         <output value="Ну пока, незнакомец!" if="empty($UserName)"/>
-        <output value="Пока-пока, $UserName!"/>
+        <output value="Досвидания, $UserName!"/>
     </input>
 
     <input pattern="[* (кто|что) так*] $Text">
